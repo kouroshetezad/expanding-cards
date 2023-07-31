@@ -1,0 +1,57 @@
+@font-face {
+  font-family: "Mulish";
+  src: url(assets/fonts/mulish/static/Mulish-Light.ttf)
+    format('truetype');
+}
+* {
+  box-sizing: border-box;
+  font-family: 'Mulish', sans-serif;
+}
+body{
+    background-color: #FFFAD7;
+}
+.container{
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
+}
+.panel{
+    height: 70vh;
+    width: 10vw;
+    border-radius: 50px;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor:pointer;
+    margin-right: 10px;
+}
+h3{
+    position: absolute;
+    color: aliceblue;
+    bottom: 10px;
+    left: 5px;
+    opacity: 0.2;
+    font-size: 24px;
+}
+.panel.active{
+   width:50vw;
+    transition: width 0.7s linear 0.1ms;
+}
+.panel.active h3{
+    opacity: 1;
+    transition: opacity 0.4s linear 0.3s;
+}
+@media (max-width: 500px){
+    .container{
+        width: 100vw;
+    }
+    .active{
+        width: 70vw;
+        background-position-x: -450px;
+    }
+    .panel:nth-of-type(3) , .panel:nth-of-type(5){
+       display: none;
+    }
+}
